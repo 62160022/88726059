@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/game.css" />
+    <title>Game</title>
+</head>
+
+<body>
+    <h1>Game APPLE</h1> 
+    <ol id="scoreboard">
+        <li>Time : <span id="time">20</span></li>
+        <li><button onclick="startGame();" id="btn">Play Game</button></li>
+        <li>Score: <span id="score">0</span></li>
+    </ol>
+
+    <div id="scene">
+        <img id="bgg" src="img/bg1.png" />
+        <img id="tree" src="img/ttt.png" />
+        <img style="top: 200px ;left: 130px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />
+        <img style="top: 205px ;left: 165px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />
+        <img style="top: 170px ;left: 200px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />
+        <img style="top: 213px ;left: 250px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />
+        <img style="top: 160px ;left: 280px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />
+        <img style="top: 170px ;left: 320px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />
+        <img style="top: 225px ;left: 329px;" onclick="fallDown(this)" class="apple" src="img/apple.png" />    
+    </div>
+
+    <script type="text/javascript" src="js/javasc.js"></script>
+
+</body>
+
+</html>

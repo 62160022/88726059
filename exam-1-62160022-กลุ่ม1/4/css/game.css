@@ -1,0 +1,76 @@
+html
+{
+    background-image: url("bg.jpg");
+    background-size: cover;
+  }
+h1{
+    color: #161515c4;
+    text-align: center;
+}
+
+body {
+    font-family: 'Helvetica';
+    text-transform: uppercase; 
+}
+
+#scene {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(191, 230, 255);
+    overflow: hidden;
+    margin: 30px auto;
+    position: relative;
+
+}
+
+#bgg {
+    position: absolute;
+    display: block;
+    width: 500px;
+    bottom: 0;
+}
+
+#tree {
+    position: absolute;
+    display: block;
+    width: 300px;
+    bottom: 60px;
+    left: 100px;
+}
+
+.apple {
+    position: absolute;
+    width: 35px;
+    height: auto;
+    transition: top .3s ease;
+}
+
+#scoreboard:after {
+    clear: both;
+    display: block;
+    content: " ";
+}
+
+#scoreboard {
+    width: 500px;
+    margin: 5px auto;
+    padding: 0;
+    background-color: #aaccf3;
+}
+
+
+
+span {
+    font-weight: bold;
+    color: rgb(199, 0, 0);
+}
+
+#scoreboard li {
+    list-style: none;
+    box-sizing: border-box;
+    width: 33%;
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
+

@@ -1,0 +1,55 @@
+@import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
+
+html {
+    background-image: url("b.jpg");
+    background-size: cover;
+  }
+  
+.N1 {
+    margin: auto;
+    width: 60%;
+    border: 2px solid black;
+    color: rgb(255, 255, 255);
+    background:rgb(161, 167, 255);
+    background: url('bg2.jpg') no-repeat center fixed; 
+    padding: 40px;
+}
+
+div{
+    margin: auto;
+    width: 100%;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+p#Text{
+    text-align: justify;
+}
+
+#A1 {
+    background:#2e343a49;
+    padding: 3px;
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+    color: rgb(175, 196, 255);
+}
+#A2 {
+    margin: auto;
+    width: 50%;
+    border: 2px solid rgb(8, 8, 8);
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color:#ffffff;
+    background-color:#a10000 ;
+    border: 2px solid rgb(10, 6, 6);
+}
+
+h1 {
+    color: #ffffffc4;
+}   
