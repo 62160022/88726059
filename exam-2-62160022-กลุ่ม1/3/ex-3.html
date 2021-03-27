@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-3</title>
+</head>
+<body>
+    <BODY BGCOLOR="#F0F8FF">
+
+    <h1>ผู้แต่ง</h1>
+    <hr>
+        รหัสผู้แต่ง<br><input type="text" id="authorID"><br>
+        ชื่อผู้แต่ง<br><input type="text" id="author"><br>
+        นามปากกา<br><input type="text" id="penname"><br>
+        <button onclick="save()">Save</button><hr>
+        <div id="disp"></div>
+        <script>
+            var authors = JSON.parse(localStorage.getItem("author"));
+            if(!Array.isArray(authors))
+                authors = new Array();
+
+               
+            for(i=0 ; i<authors.length; i++){
+                    document.getElementById('disp').innerHTML += "รหัสผู้แต่ง:" + authors[i].authorID + "<br>" +"ชื่อผู้แต่ง:"
+                    + authors[i].author + "<br>" + "นามปากกา:" + authors[i].penname + "<hr>"
+                } 
+            function save(){
+                p = document.getElementById('authorID').value;
+                n = document.getElementById('author').value;
+                w = document.getElementById('penname').value;
+                obj = {authorID: p, author:n , penname:w }
+                authors.push(obj);
+                myJSON = JSON.stringify(authors);
+                localStorage.setItem("author", myJSON);
+               
+                text = JSON.parse(localStorage.getItem("author"));
+                document.getElementById('disp').innerHTML = "";
+                for(i=0 ; i<text.length; i++){
+                    document.getElementById('disp').innerHTML += "รหัสผู้แต่ง:" + text[i].authorID + "<br>" +"ชื่อผู้แต่ง:"
+                    + text[i].author + "<br>" + "นามปากกา:" +text[i].penname + "<hr>"
+                }
+                document.getElementById('authorID').value = '';
+                document.getElementById('author').value = '';
+                document.getElementById('penname').value = '';
+                document.getElementById('authorID').focus();
+            }
+        </script>
+</body>
+</body>
+</html>

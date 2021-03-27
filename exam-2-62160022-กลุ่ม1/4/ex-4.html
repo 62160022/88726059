@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-4</title>
+</head>
+<body>
+    <BODY BGCOLOR="#F0FFF0">
+    
+    <div class="container">
+        <h1>ผู้แต่ง</h1>
+        <hr>
+        <p id="show"></p>
+    </div>
+
+<script>
+var xmlhttp, authors, x, txt = "";
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        var authors = JSON.parse(this.responseText);
+        for (x in authors) {
+            txt += "รหัส: " + authors[x].authorID +"<br>" +
+             "ชื่อ: " +  authors[x].author +"<br>"+
+             "นามปากกา: "+  authors[x].penname + "<br>" +
+             "<hr>";
+        }
+        document.getElementById("show").innerHTML = txt;
+    }  
+};
+xmlhttp.open("get", "authors.php", true);
+xmlhttp.send();
+
+</script>
+
+</body>
+</html>

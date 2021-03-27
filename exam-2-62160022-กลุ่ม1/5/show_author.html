@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show_author</title>
+</head>
+<body>
+    <BODY BGCOLOR="#FFFAF0">
+    <div class="container">
+        <h1>ผู้แต่ง</h1>
+        <hr>
+        <p id="show"></p>
+    
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+var xmlhttp, authors, x, txt = "";
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        var authors = JSON.parse(this.responseText);
+        for (x in authors) {
+            txt += `รหัส: ${authors[x].authorID} <br>
+             ชื่อ: ${authors[x].author} <br>
+             นามปากกา: ${authors[x].penname} <br>
+             <input type="button" name="delete" value="delete" class="btn btn-danger btn-xs delete_data" id="${authors[x].authorID}"><br>
+            <hr>`;
+        }
+        document.getElementById("show").innerHTML = txt;
+    }  
+};
+
+xmlhttp.open("get", "get_authors.php", true);
+xmlhttp.send();
+
+$(document).ready(function(){
+    $('.delete_data').click(function(){
+        var uid = $(this).attr("id");
+        $.ajax({
+            url:"del_author.php",
+            method:"post",
+            data:{id:uid},
+            success:function(data){
+            location.reload();
+            }
+        });
+    });
+});
+
+</script>
+</body>
+</html>

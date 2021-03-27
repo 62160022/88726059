@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-</title>
+</head>
+<body>
+  <BODY BGCOLOR="#FAEBD7">
+    <h1>ผู้แต่ง</h1><hr>
+    <p id="demo"></p>
+  <script>
+    var authors = [
+      { authorID: 1111, author: 'wittawas', penname: 'witty100' }, 
+      { authorID: 1112, author: 'jakkarin', penname: 'พ่อบ้านใจกล้า' }, 
+      { authorID: 1113, author: 'worawit', penname: 'obob' }
+];
+
+var authorsAdd = [1114, "surachai", "jummumboy"];
+      authors.push({
+        authorID: authorsAdd[0],
+        author: authorsAdd[1],
+        penname: authorsAdd[2],
+      });
+      
+var i = 0;
+var len = authors.length;
+var text = "";
+
+    for (; i < len; ) {
+        text += "รหัส: " + authors[i].authorID + "<br>";
+        text += "ชื่อ: " + authors[i].author + "<br>";
+        text += "นามปากกา: " + authors[i].penname + "<br>";
+        text +="<hr>";
+  
+  i++;
+}
+
+  function show() {
+    return text;
+}
+
+document.getElementById("demo").innerHTML = show();
+
+</script>
+</BODY>
+</body>
+</html>
